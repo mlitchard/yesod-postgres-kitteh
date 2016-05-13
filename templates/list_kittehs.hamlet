@@ -1,0 +1,8 @@
+<h1> "Big List O' Kittehs
+$if null pics
+    <p> No Pics!. Get to Uploadin'.
+$else
+    <ul>
+       $forall Entity picId pic <- pics
+            <li>
+                <a href=@{DisplayKittehR picId}>#{kittehDescBlurb pic}

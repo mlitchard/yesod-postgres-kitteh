@@ -1,0 +1,13 @@
+KittehDesc json
+       blurb Text
+       color Color
+       size KittehSize
+       deriving Show
+
+KittehData
+      kitteh_id KittehDescId Eq
+      kitteh_pic KittehPic
+      UniqueKittehId kitteh_id
+
+
+ -- By default this file is used in Model.hs (which is imported by Foundation.hs)

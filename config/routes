@@ -1,0 +1,8 @@
+/static StaticR Static appStatic
+
+/favicon.ico FaviconR GET
+/robots.txt RobotsR GET
+
+/RetrieveKitteh/#KittehDescId RetrieveKittehR GET
+/UploadKitteh UploadKittehR POST
+/ListKittehs ListKittehsR GET

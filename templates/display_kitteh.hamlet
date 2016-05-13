@@ -1,0 +1,5 @@
+<body>
+   <p> #{(kittehDescBlurb meta)}
+   <p> #{(show $ kittehDescColor meta)}
+   <p> #{(show $ kittehDescSize meta)}
+   <img src="data:image/jpeg;base64,#{sfp}" alt="Missing Kitteh Pic">

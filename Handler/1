@@ -1,0 +1,14 @@
+module Handler.ListKittehs where
+
+import Import
+
+import Types.KittehTypes
+
+getListKittehsR :: Handler ()
+getListKittehsR = do
+   pics <- runDB $ selectList [] [Desc KittehDataId]
+   let indexes = map makeIndex pics
+   return ()
+
+makeIndex :: Entity -> KittehIndex
+makeIndex = undefined
