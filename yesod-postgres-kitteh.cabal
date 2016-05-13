@@ -19,11 +19,9 @@ library
                      Import.NoFoundation
                      Model
                      Settings
-                     Settings.StaticFiles
                      Types.Atomic
                      Types.Composite
                      Demo.DemoClient
-                     Handler.Common
                      Handler.UploadKitteh
                      Handler.ListKittehs
                      Handler.RetrieveKitteh
@@ -51,16 +49,11 @@ library
                 TupleSections
                 RecordWildCards
                 DeriveGeneric 
-                NoImplicitPrelude
 
     build-depends: base                          >= 4          && < 5
                  , yesod                         >= 1.4.1      && < 1.5
                  , yesod-core                    >= 1.4.17     && < 1.5
-                 , yesod-auth                    >= 1.4.0      && < 1.5
-                 , yesod-static                  >= 1.4.0.3    && < 1.6
-                 , yesod-form                    >= 1.4.0      && < 1.5
                  , classy-prelude                >= 0.10.2
-                 , classy-prelude-conduit        >= 0.10.2
                  , classy-prelude-yesod          >= 0.10.2
                  , bytestring                    >= 0.9        && < 0.11
                  , text                          >= 0.11       && < 2.0
@@ -68,15 +61,11 @@ library
                  , persistent-postgresql         >= 2.1.1      && < 2.3
                  , persistent-template           >= 2.0        && < 2.3
                  , template-haskell
-                 , shakespeare                   >= 2.0        && < 2.1
-                 , hjsmin                        >= 0.1        && < 0.2
                  , monad-control                 >= 0.3        && < 1.1
                  , wai-extra                     >= 3.0        && < 3.1
                  , yaml                          >= 0.8        && < 0.9
                  , http-conduit                  >= 2.1        && < 2.2
-                 , directory                     >= 1.1        && < 1.3
                  , warp                          >= 3.0        && < 3.3
-                 , data-default
                  , aeson                         >= 0.6        && < 0.11
                  , conduit                       >= 1.0        && < 2.0
                  , monad-logger                  >= 0.3        && < 0.4
@@ -85,16 +74,9 @@ library
                  , base64-bytestring             >= 1.0        && < 1.1
                  , conduit-extra                 >= 1.1.9.2    && < 1.2
                  , wai-cors
-                 , basic-prelude
                  , file-embed
-                 , safe
-                 , unordered-containers
-                 , containers
-                 , vector
-                 , time
-                 , case-insensitive
                  , wai
--- added base64-bytestring
+
 executable         yesod-postgres-kitteh
     if flag(library-only)
         Buildable: False
