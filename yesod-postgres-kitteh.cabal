@@ -84,6 +84,7 @@ library
                  , wai-logger                    >= 2.2        && < 2.3
                  , base64-bytestring             >= 1.0        && < 1.1
                  , conduit-extra                 >= 1.1.9.2    && < 1.2
+                 , wai-cors
                  , basic-prelude
                  , file-embed
                  , safe
