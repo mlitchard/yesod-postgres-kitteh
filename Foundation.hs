@@ -2,13 +2,8 @@ module Foundation where
 
 import Import.NoFoundation
 import Database.Persist.Sql (ConnectionPool, runSqlPool)
-import Text.Hamlet          (hamletFile)
-import Text.Jasmine         (minifym)
-import Yesod.Default.Util   (addStaticContentExternal)
 import Yesod.Core.Types     (Logger)
 import qualified Yesod.Core.Unsafe as Unsafe
-import qualified Data.CaseInsensitive as CI
-import qualified Data.Text.Encoding as TE
 
 -- | The foundation datatype for your application. This can be a good place to
 -- keep settings and values requiring initialization before your application
@@ -44,12 +39,6 @@ instance Yesod App where
         case appRoot $ appSettings app of
             Nothing -> getApprootText guessApproot app req
             Just root -> root
-
-    -- The defaultCsrfMiddleware:
-    --   a) Sets a cookie with a CSRF token in it.
-    --   b) Validates that incoming write requests include that token in either a header or POST parameter.
-    -- For details, see the CSRF documentation in the Yesod.Core.Handler module of the yesod-core package.
---    yesodMiddleware = defaultCsrfMiddleware . defaultYesodMiddleware
 
     -- What messages should be logged. The following includes all messages when
     -- in development, and warnings and errors in production.
