@@ -2,7 +2,7 @@
 
 module Model where
 
-import Types.Atomic
+import Types.ModelTypes
 import ClassyPrelude.Yesod
 import Database.Persist.Quasi
 

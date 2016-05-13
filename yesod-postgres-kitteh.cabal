@@ -19,12 +19,13 @@ library
                      Import.NoFoundation
                      Model
                      Settings
-                     Types.Atomic
-                     Types.Composite
-                     Demo.DemoClient
+                     Types.Sundry
+                     Types.ModelTypes
+--                     Demo.DemoClient
                      Handler.UploadKitteh
                      Handler.ListKittehs
                      Handler.RetrieveKitteh
+                     Handler.UpdateKitteh
 
     if flag(dev) || flag(library-only)
         cpp-options:   -DDEVELOPMENT

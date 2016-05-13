@@ -1,16 +1,21 @@
+{-# LANGUAGE OverloadedStrings #-}
 module Handler.RetrieveKitteh where
 
 import Import
-import Yesod.Core.Json (returnJson, Value (..))
+import Types.Sundry
+import Types.ModelTypes
 
-import Types.Composite
-
-getRetrieveKittehR :: KittehDescId -> Handler (Value)
-getRetrieveKittehR kit_id = do
-   (Entity _ (KittehData kit_desc_id sfp)) <- runDB $ getBy404 $ UniqueKittehId kit_id
-   (KittehDesc blurb' color' size') <- runDB $ get404 kit_desc_id
-   let meta   = KittehDesc blurb' color' size'
-       kitteh = Kitteh meta sfp
-   returnJson $ kitteh
-   
-
+getRetrieveKittehR :: KittehDataId -> Handler (Value)
+getRetrieveKittehR kit_id =   
+  returnJson <=< 
+  runDB $ do
+           (Entity _ (KittehMeta kid status desc)) <- getMetaKitty
+           case status of 
+             OFFLINE -> noKitty 
+             ONLINE  -> yesKitty kid desc
+           where
+             getMetaKitty = getBy404 $ UniqueKittehDataId kit_id
+             noKitty = return $ Left ("Kitteh is Unavailable" :: Text)
+             yesKitty kid desc = do
+                                  (KittehData pic) <- get404 kid
+                                  return $ Right $ Kitteh desc pic

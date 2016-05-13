@@ -1,3 +1,4 @@
-/RetrieveKitteh/#KittehDescId RetrieveKittehR GET
+/RetrieveKitteh/#KittehDataId RetrieveKittehR GET
 /UploadKitteh UploadKittehR POST
+/UpdateKitteh/#KittehDataId UpdateKittehR POST
 /ListKittehs ListKittehsR GET
