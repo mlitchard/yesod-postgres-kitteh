@@ -26,6 +26,7 @@ library
                      Handler.ListKittehs
                      Handler.RetrieveKitteh
                      Handler.UpdateKitteh
+                     Handler.ChangeStatusKitteh
 
     if flag(dev) || flag(library-only)
         cpp-options:   -DDEVELOPMENT

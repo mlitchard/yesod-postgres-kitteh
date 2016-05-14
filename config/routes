@@ -2,3 +2,4 @@
 /UploadKitteh UploadKittehR POST
 /UpdateKitteh/#KittehDataId UpdateKittehR POST
 /ListKittehs ListKittehsR GET
+/ChangeStatusKitteh/#KittehDataId ChangeStatusKittehR GET
